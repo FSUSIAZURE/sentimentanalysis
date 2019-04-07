@@ -1,9 +1,9 @@
-#!/bin/python
+#!/usr/local/bin/python
 
-# This script will receive pricing and sentiment feed from data provider
+# This script will received pricing and sentiment feed from data provider
 # Usage: gettsdata.py -i <TickerSymbol> -r <RANGE> -m <MONTH> -d <DAY> -y <YEAR>
 # Example: gettsdata.py -i TWTR -r 365 -m 1 -d 1 -y 2016 or just run the script
-# Ensure data provider has valid data for Symbol provided.  For testing, leverage default values provided by running script without any arguments
+# Ensure data provider has valid data for Sybol provided.  For testing, leverage default values provided by running script without any arguments
 
 import quandl
 import datetime
@@ -22,11 +22,11 @@ def main(argv):
  try:
    opts, args = getopt.getopt(argv,"i:r:y:m:d:",["HELP=","iSym=","RANGE=","MONTH=","DATE=","DAY="])
  except getopt.GetoptError:
-   print 'gettsdata.py -i <TickerSymbol> -r <RANGE> -m <MONTH> -d <DAY> -y <YEAR>'
+   print ('gettsdata.py -i <TickerSymbol> -r <RANGE> -m <MONTH> -d <DAY> -y <YEAR>')
    sys.exit(2)
  for opt, arg in opts:
    if opt == ('-h', "--HELP"):
-         print 'gettsdata.py -i <TickerSymbol>'
+         print ('gettsdata.py -i <TickerSymbol>')
          sys.exit()
    elif opt in ("-i", "--iSym"):
          TickerSymbol = arg
@@ -40,7 +40,7 @@ def main(argv):
          da_y = int(arg)
 
 # INPUT YOUR API KEY HERE
- quandl.ApiConfig.api_key = "<Input Your Own API Key>"
+ quandl.ApiConfig.api_key = "m-JCBdkJbfX-UUYhYciZ"
 
 # Temporary store of input data
  sd = open("senti_data", "w+")
@@ -73,6 +73,7 @@ def main(argv):
         pd.write("\n")
  sd.close()
  pd.close()
+
 
 if __name__ == "__main__":
    main(sys.argv[1:])
