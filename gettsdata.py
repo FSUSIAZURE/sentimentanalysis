@@ -12,7 +12,7 @@ import getopt
 
 def main(argv):
 
-# Pre-define day range and stock symbol in case user don't provide them
+# Pre-define day range  and stock symbol in case user don't provide them
  rang_e = 365
  yea_r = 2016
  mont_h = 1
